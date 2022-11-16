@@ -40,36 +40,33 @@
         <!-- Menu desktop -->
 
         <div class="menu-desktop">
-
-          <ul class="main-menu">
-
-            {% for link in section.settings.menu.links %}
-
-              <li>
-                <a href="{{ link.url }}">{{ link.title }}</a>
-              </li>
-              {% if link.links != blank %}
+          {% for link in section.settings.menu.links %}
+            <ul class="main-menu">
+              {% if link.liks != blank %}
                 <li class="active-menu">
+                  <a href="index.html">Home</a>
 
-                  <a href="{{ link.url}}">{{ link.title}}</a>
                   {% for child_link in link.liks %}
                     <ul class="sub-menu">
-
                       <li>
-                        <a href="{{ child_link.url}}">{{ child_link.title }}</a>
+                        <a href="{{ child_link.url }}">
+                          {{ child_link.title }} 1</a>
                       </li>
-
-
-                    </ul>
-                  {% endfor %}
+                    {% endfor %}
+                  </ul>
                 </li>
               {% endif %}
+              {% if  section.settings.menu.links != blank %}
+                <li>
+                  <a href="{{ link.url}}">
+                    {{ link.title }}</a>
+                </li>
 
-            {% endfor %}
+              {% endif %}
 
 
-
-          </ul>
+            </ul>
+          {% endfor %}
         </div>
 
 
