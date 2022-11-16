@@ -41,7 +41,9 @@
         <div class="menu-desktop">
           <ul class="main-menu">
             <li class="active-menu">
-              <a href="index.html">Home</a>
+              {% for link in section.settings.menu.links %}
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              {% endfor %}
               <ul class="sub-menu">
                 <li>
                   <a href="index.html">Homepage 1</a>
@@ -298,3 +300,20 @@
     </div>
   </div>
 </div>
+
+{% schema %}
+  {
+    "name": "header",
+    "class": "container-menu-desktop",
+
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": " header menu list select",
+        "default": "main-menu"
+
+      }
+    ]
+  }
+{% endschema %}
