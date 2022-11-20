@@ -33,9 +33,12 @@
       <nav class="limiter-menu-desktop container">
 
         <!-- Logo desktop -->
-        <a href="#" class="logo">
-          <img src="images/icons/logo-01.png" alt="IMG-LOGO">
-        </a>
+        {% if section.settings.image_with_text_image != blank%}
+          <a href="{{shop.url}}" class="logo">
+            <img src="{{section.settings.image_with_text_image | img_url: '100x'}}" alt="IMG-LOGO"/>
+          </a>
+
+        {% endif %}
 
         <!-- Menu desktop -->
         <div class="menu-desktop">
@@ -292,7 +295,13 @@
         "label": " header menu list select",
         "default": "main-menu"
 
+      }, {
+        "type": "image_picker",
+        "id": "image_with_text_image",
+        "label": "Image"
       }
+
+
     ]
   }
 {% endschema %}
