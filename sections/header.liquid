@@ -38,36 +38,24 @@
         </a>
 
         <!-- Menu desktop -->
-
         <div class="menu-desktop">
-          {% for link in section.settings.menu.links %}
-            <ul class="main-menu">
-              {% if link.liks != blank %}
-                <li class="active-menu">
-                  <a href="index.html">Home</a>
-
-                  {% for child_link in link.liks %}
-                    <ul class="sub-menu">
+          <ul class="main-menu">
+            {% for link in section.settings.menu.links %}
+              <li {% if link.active %}class="{% if link.child_active %}active-menu{% endif %}"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a>
+                {% if link.links != blank %}
+                  <ul class="sub-menu">
+                    {% for child_link in link.links %}
                       <li>
-                        <a href="{{ child_link.url }}">
-                          {{ child_link.title }} 1</a>
+                        <a href="{{ child_link.url }}">{{ child_link.title }}</a>
                       </li>
                     {% endfor %}
                   </ul>
-                </li>
-              {% endif %}
-              {% if  section.settings.menu.links != blank %}
-                <li>
-                  <a href="{{ link.url}}">
-                    {{ link.title }}</a>
-                </li>
-
-              {% endif %}
-
-
-            </ul>
-          {% endfor %}
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
         </div>
+
 
 
         <!-- Icon header -->
