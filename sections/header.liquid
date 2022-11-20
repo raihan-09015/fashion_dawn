@@ -6,7 +6,7 @@
     <div class="top-bar">
       <div class="content-topbar flex-sb-m h-full container">
         <div class="left-top-bar">
-          Free shipping for standard order over $100
+          {{ section.settings.free_shipping_text | capitalize }}
         </div>
 
         <div class="right-top-bar flex-w h-full">
@@ -298,7 +298,12 @@
       }, {
         "type": "image_picker",
         "id": "image_with_text_image",
-        "label": "Image"
+        "label": "upload your logo",
+        "info": " image size will be 100px by 100px"
+      }, {
+        "type": "text",
+        "id": "free_shipping_text",
+        "label": " write your shipping related text"
       }
 
 
