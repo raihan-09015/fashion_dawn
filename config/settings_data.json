@@ -141,6 +141,7 @@
         "type": "header",
         "settings": {
           "menu": "main-menu",
+          "image_with_text_image": "shopify:\/\/shop_images\/my-logo.jpg",
           "free_shipping_text": "free shipping for 100$ all over the world"
         }
       },
